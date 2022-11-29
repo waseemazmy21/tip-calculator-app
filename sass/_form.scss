@@ -1,0 +1,78 @@
+form {
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media (min-width: 60rem) {
+        width: 430px;
+        padding: 1rem;
+    }
+
+    >div {
+        display: flex;
+        flex-direction: column;
+        gap: .875rem;
+    }
+
+    >div:last-child div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    input{
+        color: var(--very-dark-cyan);
+        background-color: var(--very-light-grayish-cyan);
+        border-radius: .5rem;
+        border: 2px solid transparent;
+        outline: 0;
+        background-repeat: no-repeat;
+        background-position: 16px;
+    }
+
+    input:not(#custom) {
+        padding: .5rem 1rem .5rem 2.5rem;
+        width: 100%;
+        text-align: right;
+    }
+    
+    #custom {
+        text-align: center;
+        padding: .8rem;
+    }
+
+    input[type="number"]:focus{
+        border: 2px solid var(--strong-cyan);
+    }
+
+
+    #bill {
+        background-image: url(../../images/icon-dollar.svg);
+    }
+
+    #num_of_people {
+        background-image: url(../../images/icon-person.svg);
+    }
+
+    .btns {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+        align-items: center; //to prevent btns from stretching cause cutom input has higher height beacause it's border
+    }
+
+    .btn {
+        color: var(--white);
+        background-color: var(--very-dark-cyan);
+        padding: .8rem;
+        border-radius: .25rem;
+        outline: none;
+        border: none;
+    }
+    
+    .btn:not(#custom):hover {
+        background-color: var(--strong-cyan);
+    }
+}
+
+
