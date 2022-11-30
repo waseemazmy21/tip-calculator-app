@@ -7,6 +7,7 @@ btns.forEach( btn => {
 })
 
 customBtn.addEventListener("change", handleClick);
+customBtn.addEventListener("click", handleClick);
 
 function handleClick(e) {
     e.preventDefault();
@@ -42,11 +43,12 @@ function getCustomPercent(input) {
 
 function validPercent(percent) {
     if(typeof percent != "number" || percent <= 0) {
-        alert("percent should be positive number");
-        document.querySelector("#custom").value = "";
+        document.querySelector("#custom").classList.add("error");
         return false;
+    } else {
+        document.querySelector("#custom").classList.remove("error");
+        return true;
     }
-    return true;
 }
 
 // get bill => valid bill
@@ -59,11 +61,12 @@ function getBill() {
 
 function validBill(bill) {
     if(typeof bill != "number" || bill <= 0) {
-        alert("bill should be positive number");
-        document.querySelector("#bill").value = "";
+        document.querySelector("#bill").classList.add("error");
         return false;
+    } else {
+        document.querySelector("#bill").classList.remove("error");
+        return true;
     }
-    return true;
 }
 
 // get get number of people => valid
